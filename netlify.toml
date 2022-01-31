@@ -11,3 +11,15 @@
 [dev]
   command = "npm run start"
   targetPort = 8888
+
+[[headers]]
+for = "/*"
+
+[headers.values]
+Expect-CT = "max-age=86400, enforce"
+Feature-Policy = "geolocation 'none'"
+Referrer-Policy = "no-referrer"
+Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "deny"
+X-XSS-Protection = "1; mode=block"
